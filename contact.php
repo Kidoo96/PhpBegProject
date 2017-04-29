@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="bg">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Тунинг Части &bull; Начало</title>
-	<meta name="author" content="Методи Симеонов"/>
-	<meta name="keywords" content="тунинг,части, голф, Фолксваген"/>
-	<meta name="description" content="Вашия уебсайт за тунинг части само за Фолксваген! bestauto"/>
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-</head>
-<body>
+<?php 
+require 'config.php'; // вкъкване на конфиг файла
+
+$page_title = 'За контакти &bull; Тунинг Части'; // Задаване на заглавие за началната страница
+include 'inc/header.php'; // вкъкване на хеадър файла
+
+ ?>
 <header id="main" class="head-bg">
 	<div class="logo">
 		<a href="#"><img src="images/logo.png"></a>
@@ -19,34 +13,45 @@
 			<p>за вашата кола</p>
 		</span>
 	</div>
-	<nav class="navi">
-		<ul>
-			<li><a href="index.html">Начало</a></li>
-			<li><a href="catalog.html">Каталог</a></li>
-			<li><a href="contact.html">За Контакти</a></li>
-		</ul>
-	</nav>
+	<?php include 'inc/nav.php'; ?>
 </header>
 
 <section id="main" class="white-bg">
 	<div class="contact">
+
+		<?php
+
+			// Променливи
+			$to = 'sappy996@gmail.com';
+			$fname = $_POST['fname'];
+			$email = $_POST['email'];
+			$subject = $_POST['subject'];
+			$message = $_POST['message'];
+			$formcontent = "From: $fname \n Message: $message";
+
+			$mailheader = "From: $email \r\n";
+
+			mail($to, $subject, $formcontent, $mailheader) or die("Error");
+
+			echo "Danke";
+
+		?>
+
+
 		<form id="contact" action="" method="post">
 		    <h3>Връзка с нас</h3>
 		    <h4>Отговор до 24 часа</h4>
 		    <fieldset>
-		      <input placeholder="Име" type="text" tabindex="1" required autofocus>
+		      <input placeholder="Име" name="fname" type="text" tabindex="1" required autofocus>
 		    </fieldset>
 		    <fieldset>
-		      <input placeholder="Емайл" type="email" tabindex="2" required>
+		      <input placeholder="Емайл" name="email" type="email" tabindex="2" required>
 		    </fieldset>
 		    <fieldset>
-		      <input placeholder="Телефон" type="tel" tabindex="3" required>
+		      <input placeholder="Относно" name="subject" type="email" tabindex="2" required>
 		    </fieldset>
 		    <fieldset>
-		      <input placeholder="Уебсайт" type="url" tabindex="4" required>
-		    </fieldset>
-		    <fieldset>
-		      <textarea placeholder="Съобщението...." tabindex="5" required></textarea>
+		      <textarea placeholder="Съобщението...." name="message" tabindex="5" required></textarea>
 		    </fieldset>
 		    <fieldset>
 		      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Изпрати</button>
@@ -56,8 +61,4 @@
 	</div>
 
 </section>
-<footer>
-	Всички права запазени &reg; Тунинг Части
-</footer>
-</body>
-</html>
+<?php include 'inc/footer.php'; ?>

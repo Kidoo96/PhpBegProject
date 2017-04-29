@@ -5,7 +5,7 @@ $page_title = 'Начало &bull; Тунинг Части'; // Задаване
 include 'inc/header.php'; // вкъкване на хеадър файла
 
  ?>
-<header id="main" class="head-bg">
+ <header id="main" class="head-bg">
 	<div class="logo">
 		<a href="#"><img src="images/logo.png"></a>
 		<span style="float:right; color: #fff; margin-left: 10px; font-family: "Calibri"; font-size: 20px; ">
@@ -15,11 +15,9 @@ include 'inc/header.php'; // вкъкване на хеадър файла
 	</div>
 	<?php include 'inc/nav.php'; ?>
 </header>
-<section id="main">
+<section id="main" class="white-bg">
 	<div class="intro" align="center">
-		<h2>За твоята мощност ще се погрижим <br> ние!</h2>
-		<p>Качеството е само при нас.</p>
-		<button type="submit" value="Разгледай" class="button" onclick="location.href='catalog.php';">Разгледай</button>
+		eeeeeeeeeeee
 	</div>
 </section>
 

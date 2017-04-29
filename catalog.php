@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="bg">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Тунинг Части &bull; Начало</title>
-	<meta name="author" content="Методи Симеонов"/>
-	<meta name="keywords" content="тунинг,части, голф, Фолксваген"/>
-	<meta name="description" content="Вашия уебсайт за тунинг части само за Фолксваген! bestauto"/>
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-</head>
-<body>
+<?php 
+require 'config.php'; // вкъкване на конфиг файла
+
+$page_title = 'Начало &bull; Тунинг Части'; // Задаване на заглавие за началната страница
+include 'inc/header.php'; // вкъкване на хеадър файла
+
+ ?>
 <header id="main" class="head-bg">
 	<div class="logo">
 		<a href="#"><img src="images/logo.png"></a>
@@ -19,13 +13,7 @@
 			<p>за вашата кола</p>
 		</span>
 	</div>
-	<nav class="navi">
-		<ul>
-			<li><a href="index.html">Начало</a></li>
-			<li><a href="catalog.html">Каталог</a></li>
-			<li><a href="contact.html">За Контакти</a></li>
-		</ul>
-	</nav>
+	<?php include 'inc/nav.php'; ?>
 </header>
 <section id="main" class="white-bg">
 	<div class="sum">
@@ -115,9 +103,8 @@
 		</table>
 	</div>
 </section>
-<footer>
-	Всички права запазени &reg; Тунинг Части
-</footer>
+
+<?php include 'inc/footer.php'; ?>
 	<script type="text/javascript">
 
 		function calc(A,B,SUM) { 
@@ -129,5 +116,3 @@
 		}
 
 	</script>
-</body>
-</html>

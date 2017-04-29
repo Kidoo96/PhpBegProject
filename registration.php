@@ -1,11 +1,10 @@
 <?php 
+require 'config.php'; // вкъкване на конфиг файла
 
-require 'config.php';
-
-$page_title = 'Вход &bull; Тунинг Части'; // Задаване на заглавие за началната страница
+$page_title = 'Регистрация &bull; Тунинг Части'; // Задаване на заглавие за началната страница
 include 'inc/header.php'; // вкъкване на хеадър файла
 
-?>
+ ?>
 <header id="main" class="head-bg">
 	<div class="logo">
 		<a href="#"><img src="images/logo.png"></a>
@@ -18,8 +17,15 @@ include 'inc/header.php'; // вкъкване на хеадър файла
 </header>
 <section id="main" class="white-bg">
 	<div class="intro" align="center">
-
-		<form method="POST" action="lg.php" class="form">
+		<form method="POST" action="reg.php" class="form">
+			<div>
+				<label for="firstname">Име:</label>
+		    	<input type="text" name="firstname">
+			</div>
+			<div>
+				<label for="email">Емайл</label>
+		    	<input type="email" name="email">
+			</div>
 			<div>
 				<label for="usernameid">Потребителско име</label>
 			    <input type="text" maxlength="16" name="username">
@@ -28,8 +34,13 @@ include 'inc/header.php'; // вкъкване на хеадър файла
 				<label for="passid">Парола</label>
 		    	<input type="password" maxlength="16" name="password">
 			</div>
-		    <input type="submit" name="Submit" value="Вход">    
+			<div>
+				<label for="passid">Повтори парола</label>
+		    	<input type="password" maxlength="16" name="passwordr">
+			</div>
+		    <input type="submit" name="Regme" value="Регистрирай ме">    
 		</form>
-
 	</div>
 </section>
+
+<?php include 'inc/footer.php'; ?>

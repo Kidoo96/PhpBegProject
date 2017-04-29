@@ -1,6 +1,5 @@
 <?php
 
-
 session_start(); // Стартирване на сесията
 
 $upload_path = 'images/upl/'; // Задаване на пътя за качените снимки
@@ -10,12 +9,13 @@ $upload_path = 'images/upl/'; // Задаване на пътя за качен�
 $mysqlserver = "localhost";
 $mysqluser = "root";
 $mysqlpass = "";
-$mysqldb = "db_parts";
 
-$conn = new mysqli($mysqlserver, $mysqluser, $mysqlpass, $mysqldb);
+$conn = mysqli_connect($mysqlserver, $mysqluser, $mysqlpass) or die("Неможе се свърже!");
+mysqli_select_db($conn, 'db_parts');
 
-if ($conn->connect_error) {
-	die("Неуспешно свързване: ". $conn->connect_error);
+// Проверка на свързването
+if (!$conn) {
+	die("Неуспешно свързване: ". mysqli_connect_error());
 }
 
 

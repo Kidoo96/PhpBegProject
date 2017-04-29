@@ -27,7 +27,7 @@ a:visited {
 }
 
 p {
-  color: #fff;
+   color: #333333;
 }
 
 #main {
@@ -100,6 +100,7 @@ nav.navi ul li a.active {
 
 .white-bg {
   background: #fff;
+  color: #333333;
 }
 
 table img {
