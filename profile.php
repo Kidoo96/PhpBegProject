@@ -18,9 +18,9 @@ include 'inc/header.php'; // вкъкване на хеадър файла
 </header>
 <section id="main" class="white-bg">
 	<div class="intro" align="center">
-		<p>добре дошъл <?php echo $_SESSION['username'] ?></p>
-		<p> <?php echo $_SESSION['user_role']; ?> </p>
-		<p> <?php echo $_SESSION['user_id']; ?> </p>
+		<p>Добре дошъл <?php echo $_SESSION['username'] ?></p>
+		<p>Роля: <?php echo $_SESSION['user_role']; ?> </p>
+		<p>Потребител ID: <?php echo $_SESSION['user_id']; ?> </p>
 		<a href="logout.php">Изход</a>
 	</div>
 </section>

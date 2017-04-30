@@ -16,6 +16,21 @@ include 'inc/header.php'; // вкъкване на хеадър файла
 	<?php include 'inc/nav.php'; ?>
 </header>
 <section id="main" class="white-bg">
+
+	<?php
+
+	$sql = "SELECT * FROM parts";
+	$result = mysqli_query($conn, $sql);
+	while ($row = mysqli_fetch_array($result)) {
+		echo "<div id='img-div'>";
+			echo "<p>".$row['name']."</p>";
+			echo "<p>".$row['price']."</p>";
+			echo "<img src='images/".$row['image']."' >";
+			echo "<p>".$row['description']."</p>";
+		echo "</div>";
+	}
+
+	?>
 	<div class="sum">
 		<p>Изберете си количество и автоматично ще изпише <font style="color:red">цената</font> по-долу.</p>
 		<hr>

@@ -6,6 +6,7 @@
 		<?php 
 		if (isset($_SESSION['username'])) {
 		?>
+			<li><a href="profile.php">Профил</a></li>
 			<li><a href="logout.php" class="active">Изход</a></li>
 		<?php
 		}
