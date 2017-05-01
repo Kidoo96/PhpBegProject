@@ -103,6 +103,12 @@ nav.navi ul li a.active {
   color: #333333;
 }
 
+.tdicon img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
 table img {
   width: 150px;
   height: 150px;

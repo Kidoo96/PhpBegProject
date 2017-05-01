@@ -4,7 +4,6 @@ require 'config.php'; // вкъкване на конфиг файла
 $page_title = 'Добави &bull; Тунинг Части'; // Задаване на заглавие за началната страница
 include 'inc/header.php'; // вкъкване на хеадър файла
 
-
 if (isset($_POST['upload'])) {
 	// Пътя за сухранение на снимката
 	$target = "images/".basename($_FILES['image']['name']);
@@ -42,23 +41,9 @@ if (isset($_POST['upload'])) {
 </header>
 <section id="main" class="white-bg">
 	<div class="intro" align="center">
-	<?php
-
-	$sql = "SELECT * FROM parts";
-	$result = mysqli_query($conn, $sql);
-	while ($row = mysqli_fetch_array($result)) {
-		echo "<div id='img-div'>";
-			echo "<p>".$row['name']."</p>";
-			echo "<p>".$row['price']."</p>";
-			echo "<img src='images/".$row['image']."' >";
-			echo "<p>".$row['description']."</p>";
-		echo "</div>";
-	}
-
-	?>
-
-
-
+		<script type="text/javascript">
+			tinymce.init({selector:'textarea'});
+		</script>
 		<form method="POST" action="addparts.php" enctype="multipart/form-data">
 			<input type="hidden" name="size" value="1000000">
 			<div>

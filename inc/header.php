@@ -7,5 +7,6 @@
 	<?php include 'meta.php'; ?>
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
 </head>
 <body>
